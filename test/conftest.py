@@ -18,8 +18,10 @@ def setup(request):
     browser_name = request.config.getoption("browser_name")
     if browser_name == "chrome":
         driver = webdriver.Chrome(executable_path="./chromedriver.exe")
-    else:
-        driver = webdriver.Firefox()
+    elif browser_name == "firefox":
+        driver = webdriver.Firefox(executable_path="./geckodriver.exe")
+    elif browser_name == "edge":
+        driver = webdriver.Edge(executable_path="./msedgedriver")
     driver.get("https://practice.automationtesting.in/")
     driver.maximize_window()
     request.cls.driver = driver
