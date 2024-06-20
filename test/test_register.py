@@ -19,7 +19,7 @@ class TestLoginRegister(SetupClass):
         user_email = self.generate_random_username()
         login_page.reg_email_fun(user_email)
         login_page.reg_pass_fun("Temp@password.123")
-        time.sleep(10)
+        time.sleep(5)
         if self.verify_locater_present(login_page.password_check):
             self.getLogger().info("Password strength check fails")
         login_page.reg_button_fun()
